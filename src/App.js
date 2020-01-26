@@ -10,61 +10,63 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import CreatePokemon from "./components/create-pokemon.component";
 import EditPokemon from "./components/edit-pokemon.component";
-import ListPokemon from "./components/pokemon-list.component";
+import ListPokemon from "./components/list-pokemon.component";
 
 function App() {
-  return (<Router>
-    <div className="App">
-      <header className="App-header">
-        <Navbar bg="dark" variant="dark">
-          <Container>
+  return (
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <Navbar bg="dark" variant="dark">
+            <Container>
 
-            <Navbar.Brand>
-              <Link to={"/create-pokemon"} className="nav-link">
-                Prog6 Praktijkopdracht 2
-              </Link>
-            </Navbar.Brand>
-
-            <Nav className="justify-content-end">
-              <Nav>
-                <Link to={"/create-pokemon"} className="nav-link">
-                  Create Pokemon
+              <Navbar.Brand>
+                <Link to={"/list-pokemon"} className="nav-link">
+                  Prog6 Praktijkopdracht 2
                 </Link>
+              </Navbar.Brand>
+
+              <Nav className="justify-content-end">
+                <Nav>
+                  <Link to={"/create-pokemon"} className="nav-link">
+                    Create Pokemon
+                  </Link>
+                </Nav>
+
+                {/* <Nav>
+                  <Link to={"/edit-student/:id"} className="nav-link">
+                    Edit Student
+                  </Link>
+                </Nav> */}
+
+                <Nav>
+                  <Link to={"/list-pokemon"} className="nav-link">
+                    Pokemon List
+                  </Link>
+                </Nav>
               </Nav>
 
-              {/* <Nav>
-                <Link to={"/edit-student/:id"} className="nav-link">
-                  Edit Student
-                </Link>
-              </Nav> */}
+            </Container>
+          </Navbar>
+        </header>
 
-              <Nav>
-                <Link to={"/pokemon-list"} className="nav-link">
-                  Pokemon List
-                </Link>
-              </Nav>
-            </Nav>
-
-          </Container>
-        </Navbar>
-      </header>
-
-      <Container>
-        <Row>
-          <Col md={12}>
-            <div className="wrapper">
-              <Switch>
-                <Route exact path='/' component={CreatePokemon} />
-                <Route path="/create-student" component={CreatePokemon} />
-                <Route path="/edit-student/:id" component={EditPokemon} />
-                <Route path="/student-list" component={ListPokemon} />
-              </Switch>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-    </div>
-  </Router>);
+        <Container>
+          <Row>
+            <Col md={12}>
+              <div className="wrapper">
+                <Switch>
+                  <Route exact path='/' component={CreatePokemon} />
+                  <Route path="/create-pokemon" component={CreatePokemon} />
+                  <Route path="/edit-pokemon/:id" component={EditPokemon} />
+                  <Route path="/list-pokemon" component={ListPokemon} />
+                </Switch>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    </Router>
+  );
 }
 
 export default App;

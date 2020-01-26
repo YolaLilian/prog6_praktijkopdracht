@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 export default class CreatePokemon extends Component {
 
@@ -10,6 +11,7 @@ export default class CreatePokemon extends Component {
     this.onChangeBabyPokemon = this.onChangeBabyPokemon.bind(this);
     this.onChangeTeenPokemon = this.onChangeTeenPokemon.bind(this);
     this.onChangeAdultPokemon = this.onChangeAdultPokemon.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       baby: '',
@@ -33,12 +35,24 @@ export default class CreatePokemon extends Component {
   onSubmit(e) {
     e.preventDefault()
 
-    console.log('Pokemon successfully created!!!!!!!');
-    console.log(`Baby: ${this.state.baby}`);
-    console.log(`Teen: ${this.state.teen}`);
-    console.log(`Adult: ${this.state.adult}`);
+    const pokemonObject = {
+      baby: this.state.baby,
+      teen: this.state.teen,
+      adult: this.state.adult
+    };
 
-    this.setState({ baby: '', teen: '', adult:'' })
+    axios.post('http://145.24.222.110:8000/posts/', pokemonObject)
+    .then(res => console.log(res.data_))
+    // console.log('Pokemon successfully created!!!!!!!');
+    // console.log(`Baby: ${this.state.baby}`);
+    // console.log(`Teen: ${this.state.teen}`);
+    // console.log(`Adult: ${this.state.adult}`);
+
+    this.setState({
+      baby: '', 
+      teen: '', 
+      adult:'' 
+    });
   }
 
   render() {

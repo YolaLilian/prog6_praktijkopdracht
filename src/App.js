@@ -55,7 +55,7 @@ function App() {
             <Col md={12}>
               <div className="wrapper">
                 <Switch>
-                  <Route exact path='/' component={CreatePokemon} />
+                  <Route exact path='/' component={ListPokemon} />
                   <Route path="/create-pokemon" component={CreatePokemon} />
                   <Route path="/edit-pokemon/:id" component={EditPokemon} />
                   <Route path="/list-pokemon" component={ListPokemon} />

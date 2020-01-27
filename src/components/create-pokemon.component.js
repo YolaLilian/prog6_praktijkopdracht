@@ -43,10 +43,7 @@ export default class CreatePokemon extends Component {
 
     axios.post('http://145.24.222.110:8000/posts/', pokemonObject)
     .then(res => console.log(res.data_))
-    // console.log('Pokemon successfully created!!!!!!!');
-    // console.log(`Baby: ${this.state.baby}`);
-    // console.log(`Teen: ${this.state.teen}`);
-    // console.log(`Adult: ${this.state.adult}`);
+    
 
     this.setState({
       baby: '', 

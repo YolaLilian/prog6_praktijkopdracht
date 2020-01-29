@@ -25,10 +25,6 @@ export default class ListPokemon extends Component {
   }
 
   DataTable() {
-
-    // for (var key in myObject) {
-    //   arr.push(myObject[key]);
-    // }
     return this.state.pokemons.map((res, i) => {
       return <PokemonTableRow obj={res} key={i} />;
     });
@@ -43,7 +39,8 @@ export default class ListPokemon extends Component {
               <th>Baby form</th>
               {/* <th>Teen form</th>
               <th>Adult form</th> */}
-              <th>Action</th> 
+              <th>Edit</th>
+              <th>Delete</th> 
             </tr>
           </thead>
           <tbody>

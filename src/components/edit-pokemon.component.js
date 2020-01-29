@@ -67,10 +67,6 @@ class EditPokemon extends Component {
         console.log(error)
       })
       .then(() => this.setState({redirect: true}));
-
-    // Redirect to Student List 
-    // this.props.history.push('/list-pokemon')
-    // return <Redirect to="/posts/list-pokemon"/>
   }
   
   
@@ -98,7 +94,7 @@ class EditPokemon extends Component {
           <Form.Control type="text" value={this.state.adult} onChange={this.onChangeAdultPokemon} />
         </Form.Group>
 
-        <Button variant="danger" size="lg" block="block" type="submit">
+        <Button variant="outline-info" size="lg" block="block" type="submit">
           Update Pokemon
         </Button>
       </Form>

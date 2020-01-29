@@ -21,20 +21,14 @@ export default class PokemonTableRow extends Component {
     render() {
         return (
             <tr>
-                <td>{this.props.obj.baby}</td>
-                {/* <td>{this.props.obj.teen}</td>
-                <td>{this.props.obj.adult}</td> */}
                 <td>
-                    <Link className="edit-link" to={"/edit-pokemon/" + this.props.obj._id}>
-                        Edit
-                    </Link>
-                    {/* <Link className="edit-link" to={"edit-pokemon/" + this.props.obj._id}>
-                        Change this pokemon!
-                    </Link> */}
-                    {/* <Button onClick={<Link to={"edit-pokemon/" + this.props.obj_id} size="lg" variant="outline-info"></Link>}>Edit this poor Pokemon</Button> */}
-                    <Button onClick={this.deletePokemon} size="lg" variant="outline-danger">Delete this pokemon from existance</Button>
-                    
-                    
+                    {this.props.obj.baby}
+                </td>
+                <td>
+                    <Button variant="outline-success" size="sm" href={"edit-pokemon/" + this.props.obj._id}>Edit</Button>
+                </td>
+                <td>
+                    <Button onClick={this.deletePokemon} size="sm" variant="outline-danger">Delete this pokemon from existance</Button>           
                 </td>
             </tr>
         );

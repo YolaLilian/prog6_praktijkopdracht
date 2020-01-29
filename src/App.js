@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import CreatePokemon from "./components/create-pokemon.component";
 import EditPokemon from "./components/edit-pokemon.component";
+import ViewPokemon from "./components/view-pokemon.component";
 import ListPokemon from "./components/list-pokemon.component";
 
 function App() {
@@ -17,16 +18,15 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <Navbar bg="dark" variant="dark">
+          <Navbar bg="#FECA1B" variant="dark" >
             <Container>
-
-              <Navbar.Brand>
-                <Link to={"/list-pokemon"} className="nav-link">
-                  Prog6 Praktijkopdracht 2
-                </Link>
-              </Navbar.Brand>
-
               <Nav className="justify-content-end">
+                <Nav>
+                  <Link to={"/list-pokemon"} className="nav-link">
+                    Prog6 Praktijkopdracht 2
+                  </Link>
+                </Nav>
+                
                 <Nav>
                   <Link to={"/create-pokemon"} className="nav-link">
                     Create Pokemon
@@ -58,6 +58,7 @@ function App() {
                   <Route exact path='/' component={ListPokemon} />
                   <Route path="/create-pokemon" component={CreatePokemon} />
                   <Route path="/edit-pokemon/:id" component={EditPokemon} />
+                  <Route path="/view-pokemon/:id" component={ViewPokemon} />
                   <Route path="/list-pokemon" component={ListPokemon} />
                 </Switch>
               </div>

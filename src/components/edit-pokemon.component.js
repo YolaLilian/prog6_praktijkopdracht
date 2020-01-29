@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
+import { Redirect, withRouter } from 'react-router-dom';
 
-export default class EditPokemon extends Component {
+class EditPokemon extends Component {
 
   constructor(props) {
     super(props)
@@ -17,7 +18,8 @@ export default class EditPokemon extends Component {
     this.state = {
       baby: '',
       teen: '',
-      adult: ''
+      adult: '',
+      redirect: false
     }
   }
 
@@ -64,13 +66,21 @@ export default class EditPokemon extends Component {
       }).catch((error) => {
         console.log(error)
       })
+      .then(() => this.setState({redirect: true}));
 
     // Redirect to Student List 
-    this.props.history.push('/list-pokemon')
+    // this.props.history.push('/list-pokemon')
+    // return <Redirect to="/posts/list-pokemon"/>
   }
-
-
+  
+  
   render() {
+    const { redirect } = this.state;
+  
+    if (redirect) {
+      return <Redirect to="/list-pokemon" />
+    }
+    
     return (<div className="form-wrapper">
       <Form onSubmit={this.onSubmit}>
         <Form.Group controlId="Baby">
@@ -95,3 +105,5 @@ export default class EditPokemon extends Component {
     </div>);
   }
 }
+
+export default withRouter(EditPokemon);

@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import CreatePokemon from "./components/create-pokemon.component";
 import EditPokemon from "./components/edit-pokemon.component";
-import ViewPokemon from "./components/view-pokemon.component";
 import ListPokemon from "./components/list-pokemon.component";
 
 function App() {
@@ -46,7 +45,6 @@ function App() {
                   <Route exact path='/' component={ListPokemon} />
                   <Route path="/create-pokemon" component={CreatePokemon} />
                   <Route path="/edit-pokemon/:id" component={EditPokemon} />
-                  <Route path="/view-pokemon/:id" component={ViewPokemon} />
                 </Switch>
               </div>
             </Col>

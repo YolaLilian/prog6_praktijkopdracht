@@ -22,7 +22,7 @@ function App() {
             <Container>
               <Nav className="justify-content-end">
                 <Nav>
-                  <Link to={"/list-pokemon"} className="nav-link">
+                  <Link to={"/"} className="nav-link">
                     Prog6 Praktijkopdracht 2
                   </Link>
                 </Nav>
@@ -30,18 +30,6 @@ function App() {
                 <Nav>
                   <Link to={"/create-pokemon"} className="nav-link">
                     Create Pokemon
-                  </Link>
-                </Nav>
-
-                {/* <Nav>
-                  <Link to={"/edit-student/:id"} className="nav-link">
-                    Edit Student
-                  </Link>
-                </Nav> */}
-
-                <Nav>
-                  <Link to={"/list-pokemon"} className="nav-link">
-                    Pokemon List
                   </Link>
                 </Nav>
               </Nav>
@@ -59,7 +47,6 @@ function App() {
                   <Route path="/create-pokemon" component={CreatePokemon} />
                   <Route path="/edit-pokemon/:id" component={EditPokemon} />
                   <Route path="/view-pokemon/:id" component={ViewPokemon} />
-                  <Route path="/list-pokemon" component={ListPokemon} />
                 </Switch>
               </div>
             </Col>

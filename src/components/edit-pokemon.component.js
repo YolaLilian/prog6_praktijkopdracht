@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
@@ -74,7 +74,7 @@ class EditPokemon extends Component {
     const { redirect } = this.state;
   
     if (redirect) {
-      return <Redirect to="/list-pokemon" />
+      return <Redirect to="/" />
     }
     
     return (<div className="form-wrapper">

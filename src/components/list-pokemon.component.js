@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
-import PokemonTableRow from './PokemonTableRow'; 
+import PokemonTableRow from './PokemonTableRow';
+import { useParams } from 'react-router-dom'; 
 
 export default class ListPokemon extends Component {
 
@@ -12,7 +13,7 @@ export default class ListPokemon extends Component {
     };
   }
 
-  componentDidMount() {
+    componentDidMount() {
     axios.get('http://145.24.222.110:8000/posts/')
     .then(res => {
       this.setState({ 
@@ -23,6 +24,7 @@ export default class ListPokemon extends Component {
       console.log(error);
     })
   }
+
 
   DataTable() {
     return this.state.pokemons.map((res, i) => {

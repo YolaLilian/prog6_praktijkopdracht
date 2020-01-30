@@ -28,7 +28,7 @@ function App() {
                   </Link>
                 </Nav>
                 <Nav>
-                  <Link className="nav-link">
+                  <Link className="nav-link" to={"/pokemon"}>
                     |
                   </Link>
                 </Nav>
@@ -51,6 +51,7 @@ function App() {
                   <Route exact path='/pokemon' component={ListPokemon} />
                   <Route path="/pokemon/create" component={CreatePokemon} />
                   <Route path="/pokemon/:id/edit" component={EditPokemon} />
+                  <Route path="/pokemon/:id" component={ListPokemon} />
                 </Switch>
               </div>
             </Col>

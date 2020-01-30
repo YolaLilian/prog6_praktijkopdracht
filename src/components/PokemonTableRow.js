@@ -48,7 +48,7 @@ class PokemonTableRow extends Component {
                         </Button>
                     </td>
                     <td>
-                        <Button variant="outline-info" size="sm" href={"edit-pokemon/" + this.props.obj._id}>Edit</Button>
+                        <Button variant="outline-info" size="sm" href={"/pokemon/" + this.props.obj._id + "/edit"}>Edit</Button>
                     </td>
                     <td>
                         <Button onClick={this.deletePokemon} size="sm" variant="outline-danger">Delete</Button>           

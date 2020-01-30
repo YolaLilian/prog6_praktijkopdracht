@@ -36,7 +36,7 @@ export default class ListPokemon extends Component {
         <Table striped bordered hover>
           <thead>
             <tr>
-              <th>Baby form</th>
+              <th>First evolution</th>
               {/* <th>Teen form</th>
               <th>Adult form</th> */}
               <th>Edit</th>

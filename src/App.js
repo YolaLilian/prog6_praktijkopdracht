@@ -11,21 +11,27 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import CreatePokemon from "./components/create-pokemon.component";
 import EditPokemon from "./components/edit-pokemon.component";
 import ListPokemon from "./components/list-pokemon.component";
+import Logo from "./images/Not-the-real-Pokemon-API.png"
 
 function App() {
   return (
     <Router>
       <div className="App">
         <header className="App-header">
+                  <img src={Logo} alt="website logo" />
           <Navbar bg="#FECA1B" variant="dark" >
             <Container>
               <Nav className="justify-content-end">
                 <Nav>
                   <Link to={"/"} className="nav-link">
-                    Prog6 Praktijkopdracht 2
+                    Pokemon List
                   </Link>
                 </Nav>
-                
+                <Nav>
+                  <Link className="nav-link">
+                    |
+                  </Link>
+                </Nav>
                 <Nav>
                   <Link to={"/create-pokemon"} className="nav-link">
                     Create Pokemon

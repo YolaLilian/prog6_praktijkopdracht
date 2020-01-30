@@ -58,12 +58,12 @@ class PokemonTableRow extends Component {
                 <Modal show={this.state.showModal} onHide={this.handleHide}>
                     <Modal.Header closeButton>
                         <Modal.Title>
-                            Baby form: {this.props.obj.baby}
+                            First evolution: {this.props.obj.baby}
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        Teen form: {this.props.obj.teen}<br />
-                        Adult from: {this.props.obj.adult}
+                        Second evolution: {this.props.obj.teen}<br />
+                        Third evolution: {this.props.obj.adult}
                         </Modal.Body>
                     <Modal.Footer>
                     <Button variant="outline-dark" onClick={this.handleHide}>

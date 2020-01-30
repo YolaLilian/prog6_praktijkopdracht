@@ -42,7 +42,7 @@ class PokemonTableRow extends Component {
         const { redirect } = this.state;
 
         if (redirect) {
-            return <Redirect to="/" />
+            return <Redirect to="/pokemon" />
         }
 
         return (
